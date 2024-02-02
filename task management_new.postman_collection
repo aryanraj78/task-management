@@ -1,0 +1,2047 @@
+{
+	"info": {
+		"_postman_id": "bcc7a911-d6e8-4813-995e-70f97abe844c",
+		"name": "task management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4447029"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "admin/task-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/task-list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"task-list"
+							]
+						},
+						"description": "## Get Task List\n\nThis endpoint retrieves a list of tasks along with their details.\n\n### Response\n\n- `status`: Indicates the status of the response.\n- `status_code`: The HTTP status code of the response.\n- `message`: A message regarding the response status.\n- `data`: The main data container.\n    - `task_list`: Contains the list of tasks.\n        - `current_page`: The current page number.\n        - `data`: An array of tasks with their details.\n            - `id`: The unique identifier of the task.\n            - `assigned_user_id`: The ID of the user to whom the task is assigned.\n            - `created_by`: The ID of the user who created the task.\n            - `title`: The title of the task.\n            - `description`: The description of the task.\n            - `status`: The status of the task.\n            - `created_at`: The timestamp when the task was created.\n            - `updated_at`: The timestamp when the task was last updated.\n            - `user`: Details of the user to whom the task is assigned.\n                - `id`: The unique identifier of the user.\n                - `name`: The name of the user.\n                - `email`: The email of the user.\n                - `role`: The role of the user.\n                - `email_verified_at`: The timestamp when the user's email was verified.\n                - `created_at`: The timestamp when the user was created.\n                - `updated_at`: The timestamp when the user was last updated.\n            - `status_list`: An array containing the status history of the task.\n                - `id`: The unique identifier of the status entry.\n                - `task_id`: The ID of the task.\n                - `status`: The status of the task at that point.\n                - `created_at`: The timestamp when the status entry was created.\n                - `updated_at`: The timestamp when the status entry was last updated.\n        - `first_page_url`: The URL for the first page of the task list.\n        - `from`: The starting index of the tasks.\n        - `last_page`: The last page number.\n        - `last_page_url`: The URL for the last page of the task list.\n        - `links`: An array of page links.\n            - `url`: The URL of the page.\n            - `label`: The label for the page link.\n            - `active`: Indicates if the page link is active.\n        - `next_page_url`: The URL for the next page of the task list.\n        - `path`: The base path for the task list URL.\n        - `per_page`: The number of tasks per page.\n        - `prev_page_url`: The URL for the previous page of the task list.\n        - `to`: The ending index of the tasks.\n        - `total`: The total number of tasks."
+					},
+					"response": [
+						{
+							"name": "admin/task-list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/task-list",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"task-list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:26:16 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:26:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task List\",\n    \"data\": {\n        \"task_list\": {\n            \"current_page\": 1,\n            \"data\": [\n                {\n                    \"id\": 3,\n                    \"assigned_user_id\": 2,\n                    \"created_by\": 1,\n                    \"title\": \"ui design\",\n                    \"description\": \"html binding\",\n                    \"status\": \"To do\",\n                    \"created_at\": \"2024-02-02T07:25:53.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:25:53.000000Z\",\n                    \"user\": {\n                        \"id\": 2,\n                        \"name\": \"Aryan\",\n                        \"email\": \"tapesh@gmail.com\",\n                        \"role\": \"admin\",\n                        \"email_verified_at\": null,\n                        \"created_at\": \"2024-02-02T07:17:54.000000Z\",\n                        \"updated_at\": \"2024-02-02T07:17:54.000000Z\"\n                    },\n                    \"status_list\": [\n                        {\n                            \"id\": 4,\n                            \"task_id\": 3,\n                            \"status\": \"To do\",\n                            \"created_at\": \"2024-02-02T07:25:53.000000Z\",\n                            \"updated_at\": \"2024-02-02T07:25:53.000000Z\"\n                        }\n                    ]\n                }\n            ],\n            \"first_page_url\": \"http://127.0.0.1:8000/api/admin/task-list?page=1\",\n            \"from\": 1,\n            \"last_page\": 1,\n            \"last_page_url\": \"http://127.0.0.1:8000/api/admin/task-list?page=1\",\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/admin/task-list?page=1\",\n                    \"label\": \"1\",\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"active\": false\n                }\n            ],\n            \"next_page_url\": null,\n            \"path\": \"http://127.0.0.1:8000/api/admin/task-list\",\n            \"per_page\": 10,\n            \"prev_page_url\": null,\n            \"to\": 1,\n            \"total\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "admin/user-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/user-list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"user-list"
+							]
+						},
+						"description": "This endpoint makes an HTTP GET request to retrieve a list of users from the admin panel. The response includes a status of \"Success\" along with a status code of 200, and a message indicating \"User List\". The data section of the response contains an array of user objects, each including the user's ID, name, email, role, email verification status, creation and update timestamps, and any assigned tasks. Additionally, the response includes pagination details such as the current page, total number of users, and links for navigating through the user list.\n\nThe user may want to use this endpoint to fetch the list of users and display them in their application or system."
+					},
+					"response": [
+						{
+							"name": "admin/user-list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/user-list",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"user-list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:26:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:26:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"User List\",\n    \"data\": {\n        \"user_list\": {\n            \"current_page\": 1,\n            \"data\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"admin\",\n                    \"email\": \"admin@admin.com\",\n                    \"role\": \"admin\",\n                    \"email_verified_at\": null,\n                    \"created_at\": \"2024-02-01T11:25:37.000000Z\",\n                    \"updated_at\": \"2024-02-01T11:25:37.000000Z\",\n                    \"assigned_task\": []\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Aryan\",\n                    \"email\": \"tapesh@gmail.com\",\n                    \"role\": \"admin\",\n                    \"email_verified_at\": null,\n                    \"created_at\": \"2024-02-02T07:17:54.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:17:54.000000Z\",\n                    \"assigned_task\": [\n                        {\n                            \"id\": 3,\n                            \"assigned_user_id\": 2,\n                            \"created_by\": 1,\n                            \"title\": \"ui design\",\n                            \"description\": \"html binding\",\n                            \"status\": \"To do\",\n                            \"created_at\": \"2024-02-02T07:25:53.000000Z\",\n                            \"updated_at\": \"2024-02-02T07:25:53.000000Z\",\n                            \"status_list\": [\n                                {\n                                    \"id\": 4,\n                                    \"task_id\": 3,\n                                    \"status\": \"To do\",\n                                    \"created_at\": \"2024-02-02T07:25:53.000000Z\",\n                                    \"updated_at\": \"2024-02-02T07:25:53.000000Z\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            ],\n            \"first_page_url\": \"http://127.0.0.1:8000/api/admin/user-list?page=1\",\n            \"from\": 1,\n            \"last_page\": 1,\n            \"last_page_url\": \"http://127.0.0.1:8000/api/admin/user-list?page=1\",\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/admin/user-list?page=1\",\n                    \"label\": \"1\",\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"active\": false\n                }\n            ],\n            \"next_page_url\": null,\n            \"path\": \"http://127.0.0.1:8000/api/admin/user-list\",\n            \"per_page\": 10,\n            \"prev_page_url\": null,\n            \"to\": 2,\n            \"total\": 2\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "admin/get-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/get-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"get-user"
+							]
+						},
+						"description": "## Get User\n\nThis API endpoint makes an HTTP POST request to retrieve user details.\n\n### Request Body\n\n- form-data\n    - user_id (text): The ID of the user for whom the details are to be retrieved.\n\n### Response\n\n- status (string): The status of the response, indicating success or failure.\n- status_code (integer): The status code of the response.\n- message (string): A message providing information about the operation performed.\n- data (object): An object containing the user details.\n    - user (object): An object containing the user's information.\n        - id (integer): The unique identifier of the user.\n        - name (string): The name of the user.\n        - email (string): The email address of the user.\n        - role (string): The role of the user.\n        - email_verified_at (string): The date and time when the user's email was verified.\n        - created_at (string): The date and time when the user was created.\n        - updated_at (string): The date and time when the user was last updated.\n        - assigned_task (array): An array containing the tasks assigned to the user.\n            - id (integer): The unique identifier of the task.\n            - assigned_user_id (integer): The ID of the user to whom the task is assigned.\n            - created_by (integer): The ID of the user who created the task.\n            - title (string): The title of the task.\n            - description (string): The description of the task.\n            - status (string): The status of the task.\n            - created_at (string): The date and time when the task was created.\n            - updated_at (string): The date and time when the task was last updated.\n            - status_list (array): An array containing the status history of the task.\n                - id (integer): The unique identifier of the status entry.\n                - task_id (integer): The ID of the task.\n                - status (string): The status of the task at the time of this entry.\n                - created_at (string): The date and time when the status entry was created.\n                - updated_at (string): The date and time when the status entry was last updated."
+					},
+					"response": [
+						{
+							"name": "admin/get-user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/get-user",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"get-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:27:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:27:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"get User \",\n    \"data\": {\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Aryan\",\n            \"email\": \"tapesh@gmail.com\",\n            \"role\": \"admin\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-02-02T07:17:54.000000Z\",\n            \"updated_at\": \"2024-02-02T07:17:54.000000Z\",\n            \"assigned_task\": [\n                {\n                    \"id\": 3,\n                    \"assigned_user_id\": 2,\n                    \"created_by\": 1,\n                    \"title\": \"ui design\",\n                    \"description\": \"html binding\",\n                    \"status\": \"To do\",\n                    \"created_at\": \"2024-02-02T07:25:53.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:25:53.000000Z\",\n                    \"status_list\": [\n                        {\n                            \"id\": 4,\n                            \"task_id\": 3,\n                            \"status\": \"To do\",\n                            \"created_at\": \"2024-02-02T07:25:53.000000Z\",\n                            \"updated_at\": \"2024-02-02T07:25:53.000000Z\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create-task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "ui design",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "html binding",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "To do",
+									"type": "text"
+								},
+								{
+									"key": "assigned_user_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/create-task",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"create-task"
+							]
+						},
+						"description": "# Create Task\n\nThis endpoint allows the admin to create a new task.\n\n## Request Body\n\n- `title` (text): The title of the task.\n- `description` (text): The description of the task.\n- `status` (text): The status of the task.\n- `assigned_user_id` (text): The ID of the user to whom the task is assigned.\n    \n\n## Response\n\n- `status` (string): Indicates the status of the request, whether it was successful or not.\n- `status_code` (number): The status code of the response.\n- `message` (string): A message indicating the outcome of the request.\n- `data` (array): An array containing the created task details.\n    \n\n### Example\n\n``` json\n{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task Created successfully!!\",\n    \"data\": []\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "create-task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "ui design",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "html binding",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "To do",
+											"type": "text"
+										},
+										{
+											"key": "assigned_user_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/create-task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"create-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:25:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:25:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task Created successfully!!\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "update-task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "inprogress",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/update-task",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"update-task"
+							]
+						},
+						"description": "This endpoint is used to update a task through an HTTP POST request. The request should be sent to [http://127.0.0.1:8000/api/admin/update-task](http://127.0.0.1:8000/api/admin/update-task) with a form-data request body type. The request payload should include the task_id and status parameters, both of type text.\n\n### Request Body\n\n- task_id (text): The ID of the task to be updated.\n- status (text): The new status of the task.\n    \n\n### Response\n\n- status (string): Indicates the status of the request, whether it was successful or not.\n- status_code (integer): The status code of the response.\n- message (string): A message indicating the outcome of the task update.\n- data (array): An array of any additional data related to the task update.\n    \n\n#### Example\n\n``` json\n{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task is updated successfully!!\",\n    \"data\": []\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "update-task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "task_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "inprogress",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/update-task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"update-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:28:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:28:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task is updated successfully!!\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "delete-task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/delete-task",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"delete-task"
+							]
+						},
+						"description": "## Delete Task\n\nThis endpoint allows the admin to delete a task.\n\n### Request Parameters\n\n- `task_id` (text) - The ID of the task to be deleted.\n    \n\n### Response\n\n- `status` - The status of the operation (e.g., \"Success\").\n- `status_code` - The status code of the operation (e.g., 200).\n- `message` - A message indicating the result of the delete operation.\n- `data` - An array of data related to the delete operation.\n    \n\n#### Example Response\n\n``` json\n{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task is deleted successfully!!\",\n    \"data\": []\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "delete-task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "task_id",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/delete-task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"delete-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:56:35 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:56:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task is deleted successfully!!\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "get-task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/get-task",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"get-task"
+							]
+						},
+						"description": "This API endpoint makes an HTTP POST request to retrieve a specific task from the admin's task list. The request should include a form-data body with a parameter \"task_id\" of type text, containing the ID of the task to be retrieved.\n\nThe response will include a status, status code, a message indicating the success of the task retrieval, and detailed information about the retrieved task. This includes the task's ID, assigned user ID, creator's ID, title, description, status, creation and update timestamps, as well as information about the user assigned to the task and a list of status changes associated with the task."
+					},
+					"response": [
+						{
+							"name": "get-task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "task_id",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/get-task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"get-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:28:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:28:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task get successfully!!\",\n    \"data\": {\n        \"task\": {\n            \"id\": 3,\n            \"assigned_user_id\": 2,\n            \"created_by\": 1,\n            \"title\": \"ui design\",\n            \"description\": \"html binding\",\n            \"status\": \"inprogress\",\n            \"created_at\": \"2024-02-02T07:25:53.000000Z\",\n            \"updated_at\": \"2024-02-02T07:28:09.000000Z\",\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Aryan\",\n                \"email\": \"tapesh@gmail.com\",\n                \"role\": \"admin\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2024-02-02T07:17:54.000000Z\",\n                \"updated_at\": \"2024-02-02T07:17:54.000000Z\"\n            },\n            \"status_list\": [\n                {\n                    \"id\": 4,\n                    \"task_id\": 3,\n                    \"status\": \"To do\",\n                    \"created_at\": \"2024-02-02T07:25:53.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:25:53.000000Z\"\n                },\n                {\n                    \"id\": 5,\n                    \"task_id\": 3,\n                    \"status\": \"inprogress\",\n                    \"created_at\": \"2024-02-02T07:28:09.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:28:09.000000Z\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "assign-task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "assigned_user_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/admin/assign-task",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"assign-task"
+							]
+						},
+						"description": "\nThis HTTP POST request is used to assign a task to a specific user within the admin API. The request should be sent to http://127.0.0.1:8000/api/admin/assign-task with a form-data body containing the task_id and assigned_user_id parameters.\n\n### Request Body\n- task_id (text)\n- assigned_user_id (text)\n\nUpon a successful request, the server will respond with a status code of 200 and a JSON object containing the following fields:\n- status: \"Success\"\n- status_code: 200\n- message: \"Task is assigned successfully!!\"\n- data: []\n\nThis indicates that the task has been assigned to the specified user. \n"
+					},
+					"response": [
+						{
+							"name": "assign-task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "task_id",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "assigned_user_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/assign-task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"assign-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:28:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:28:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task is assigned successfully!!\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Aryan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "tapesh@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "c_password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register?api_token=9801c30ca14c57ff49dfa936fd1c3f2f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "9801c30ca14c57ff49dfa936fd1c3f2f"
+								}
+							]
+						},
+						"description": "\n### Register User\n\nThis endpoint allows you to register a new user.\n\n- Method: POST\n- URL: `http://127.0.0.1:8000/api/register?api_token=9801c30ca14c57ff49dfa936fd1c3f2f`\n\n#### Form-Data Parameters\n1. `name` (text) - The name of the user.\n2. `email` (text) - The email address of the user.\n3. `password` (text) - The password for the user account.\n4. `c_password` (text) - The confirmation password.\n\n#### Response\n- `status`: \"Success\"\n- `status_code`: 200\n- `message`: \"User registered successfully!!\"\n- `data`:\n    - `token`: The authentication token for the registered user.\n    - `name`: The name of the registered user.\n\n"
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Aryan",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "tapesh@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "c_password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/register?api_token=9801c30ca14c57ff49dfa936fd1c3f2f",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"register"
+									],
+									"query": [
+										{
+											"key": "api_token",
+											"value": "9801c30ca14c57ff49dfa936fd1c3f2f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:17:54 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:17:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"User registered successfully!!\",\n    \"data\": {\n        \"token\": \"1|a8GFYpnHSowqza643ZST2NtLTqyD0k7qjmueoxS1\",\n        \"name\": \"Aryan\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						},
+						"description": "This endpoint makes an HTTP GET request to retrieve user information from the API. The response will include the user's unique ID, name, email, role, email verification status, creation timestamp, and last update timestamp."
+					},
+					"response": [
+						{
+							"name": "user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:21:16 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:21:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Aryan\",\n    \"email\": \"tapesh@gmail.com\",\n    \"role\": \"admin\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2024-02-02T07:17:54.000000Z\",\n    \"updated_at\": \"2024-02-02T07:17:54.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "create-task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "data binding",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "data",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "To do",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/create-task",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"create-task"
+							]
+						},
+						"description": "# Create Task\n\nThis endpoint is used to create a new task.\n\n## Request\n\n- Method: POST\n- URL: `http://127.0.0.1:8000/api/create-task`\n- Body: form-data\n    \n\n### Parameters\n\n- `title` (text): The title of the task.\n- `description` (text): The description of the task.\n- `status` (text): The status of the task.\n    \n\n## Response\n\n- `status` (string): Indicates the status of the request, e.g., \"Success\".\n- `status_code` (integer): The status code of the response, e.g., 200.\n- `message` (string): A message indicating the result of the request, e.g., \"Task Created successfully!!\".\n- `data` (array): An array containing the created task data."
+					},
+					"response": [
+						{
+							"name": "create-task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "ui design",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "html binding",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "To do",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/create-task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"create-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:18:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:18:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task Created successfully!!\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "task-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/task-list",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"task-list"
+							]
+						},
+						"description": "This endpoint makes an HTTP GET request to retrieve a list of tasks. The response will include a status, status code, a message, and data related to the task list. The data will contain information about the tasks including their IDs, assigned user IDs, creators, titles, descriptions, statuses, creation and update timestamps, and status lists. Additionally, the response will include pagination details such as current page, first and last page URLs, page links, and total number of tasks.\n\nExample response:\n\n``` json\n{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task List\",\n    \"data\": {\n        \"task_list\": {\n            \"current_page\": 1,\n            \"data\": [\n                {\n                    \"id\": 1,\n                    \"assigned_user_id\": 2,\n                    \"created_by\": 2,\n                    \"title\": \"ui design\",\n                    \"description\": \"html binding\",\n                    \"status\": \"To do\",\n                    \"created_at\": \"2024-02-02T07:18:23.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:18:23.000000Z\",\n                    \"status_list\": [\n                        {\n                            \"id\": 1,\n                            \"task_id\": 1,\n                            \"status\": \"To do\",\n                            \"created_at\": \"2024-02-02T07:18:23.000000Z\",\n                            \"updated_at\": \"2024-02-02T07:18:23.000000Z\"\n                        }\n                    ]\n                }\n            ],\n            \"first_page_url\": \"http://127.0.0.1:8000/api/task-list?page=1\",\n            \"from\": 1,\n            \"last_page\": 1,\n            \"last_page_url\": \"http://127.0.0.1:8000/api/task-list?page=1\",\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"« Previous\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/task-list?page=1\",\n                    \"label\": \"1\",\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next »\",\n                    \"active\": false\n                }\n            ],\n            \"next_page_url\": null,\n            \"path\": \"http://127.0.0.1:8000/api/task-list\",\n            \"per_page\": 10,\n            \"prev_page_url\": null,\n            \"to\": 1,\n            \"total\": 1\n        }\n    }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "task-list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/task-list",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"task-list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:19:06 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:19:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task List\",\n    \"data\": {\n        \"task_list\": {\n            \"current_page\": 1,\n            \"data\": [\n                {\n                    \"id\": 1,\n                    \"assigned_user_id\": 2,\n                    \"created_by\": 2,\n                    \"title\": \"ui design\",\n                    \"description\": \"html binding\",\n                    \"status\": \"To do\",\n                    \"created_at\": \"2024-02-02T07:18:23.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:18:23.000000Z\",\n                    \"status_list\": [\n                        {\n                            \"id\": 1,\n                            \"task_id\": 1,\n                            \"status\": \"To do\",\n                            \"created_at\": \"2024-02-02T07:18:23.000000Z\",\n                            \"updated_at\": \"2024-02-02T07:18:23.000000Z\"\n                        }\n                    ]\n                }\n            ],\n            \"first_page_url\": \"http://127.0.0.1:8000/api/task-list?page=1\",\n            \"from\": 1,\n            \"last_page\": 1,\n            \"last_page_url\": \"http://127.0.0.1:8000/api/task-list?page=1\",\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/task-list?page=1\",\n                    \"label\": \"1\",\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"active\": false\n                }\n            ],\n            \"next_page_url\": null,\n            \"path\": \"http://127.0.0.1:8000/api/task-list\",\n            \"per_page\": 10,\n            \"prev_page_url\": null,\n            \"to\": 1,\n            \"total\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update-task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "in progress",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/update-task",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"update-task"
+							]
+						},
+						"description": "This API endpoint is used to update a task via an HTTP POST request. The request should be sent to [http://127.0.0.1:8000/api/update-task](http://127.0.0.1:8000/api/update-task) with a form-data request body. The request body should include the task_id and status parameters, both of type text.\n\n### Request Body\n\n- task_id (text): The ID of the task to be updated.\n- status (text): The new status of the task.\n    \n\n### Response\n\n- status (string): Indicates the status of the request, whether it was successful or not.\n- status_code (integer): The HTTP status code of the response.\n- message (string): A message indicating the outcome of the task update.\n- data (array): An array of any additional data related to the task update.\n    \n\n#### Example Response\n\n``` json\n{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task is updated successfully!!\",\n    \"data\": []\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "update-task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "task_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "in progress",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/update-task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"update-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:19:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:19:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task is updated successfully!!\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "delete-task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/delete-task",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"delete-task"
+							]
+						},
+						"description": "This endpoint makes an HTTP POST request to delete a task. The request should include a form-data body with a parameter \"task_id\" of type text. Upon successful deletion, the response will include a status of \"Success\", a status code of 200, a message confirming the successful deletion, and an empty data array."
+					},
+					"response": [
+						{
+							"name": "delete-task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "task_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/delete-task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"delete-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:22:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:22:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task is deleted successfully!!\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "get-task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/get-task",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"get-task"
+							]
+						},
+						"description": "### Get Task Details\n\nThis endpoint allows you to retrieve details of a specific task by providing the task ID.\n\n#### Request\n\n- Method: POST\n- Endpoint: `http://127.0.0.1:8000/api/get-task`\n- Body (form-data):\n    - `task_id` (text): The ID of the task to retrieve details for.\n\n#### Response\n\nUpon a successful request, the server will respond with the following fields:\n\n- `status` (string): Indicates the status of the request (e.g., \"Success\").\n- `status_code` (integer): The status code of the response (e.g., 200).\n- `message` (string): A message indicating the outcome of the request.\n- `data` (object): Contains the details of the retrieved task, including its ID, assigned user ID, creator ID, title, description, status, creation timestamp, update timestamp, and a list of status updates.\n    \n\n#### Example\n\n``` json\n{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task get successfully!!\",\n    \"data\": {\n        \"task\": {\n            \"id\": 1,\n            \"assigned_user_id\": 2,\n            \"created_by\": 2,\n            \"title\": \"ui design\",\n            \"description\": \"html binding\",\n            \"status\": \"in progress\",\n            \"created_at\": \"2024-02-02T07:18:23.000000Z\",\n            \"updated_at\": \"2024-02-02T07:19:28.000000Z\",\n            \"status_list\": [\n                {\n                    \"id\": 1,\n                    \"task_id\": 1,\n                    \"status\": \"To do\",\n                    \"created_at\": \"2024-02-02T07:18:23.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:18:23.000000Z\"\n                },\n                {\n                    \"id\": 2,\n                    \"task_id\": 1,\n                    \"status\": \"in progress\",\n                    \"created_at\": \"2024-02-02T07:19:28.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:19:28.000000Z\"\n                }\n            ]\n        }\n    }\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "get-task",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "task_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/get-task",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"get-task"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:20:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Feb 2024 07:20:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.30"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"Task get successfully!!\",\n    \"data\": {\n        \"task\": {\n            \"id\": 1,\n            \"assigned_user_id\": 2,\n            \"created_by\": 2,\n            \"title\": \"ui design\",\n            \"description\": \"html binding\",\n            \"status\": \"in progress\",\n            \"created_at\": \"2024-02-02T07:18:23.000000Z\",\n            \"updated_at\": \"2024-02-02T07:19:28.000000Z\",\n            \"status_list\": [\n                {\n                    \"id\": 1,\n                    \"task_id\": 1,\n                    \"status\": \"To do\",\n                    \"created_at\": \"2024-02-02T07:18:23.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:18:23.000000Z\"\n                },\n                {\n                    \"id\": 2,\n                    \"task_id\": 1,\n                    \"status\": \"in progress\",\n                    \"created_at\": \"2024-02-02T07:19:28.000000Z\",\n                    \"updated_at\": \"2024-02-02T07:19:28.000000Z\"\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login?api_token=9801c30ca14c57ff49dfa936fd1c3f2f",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "api_token",
+							"value": "9801c30ca14c57ff49dfa936fd1c3f2f"
+						}
+					]
+				},
+				"description": "This endpoint allows users to log in using their email and password. The request should be sent as an HTTP POST to the specified URL with the API token included in the query parameters. The request body should be of type form-data and include the 'email' and 'password' parameters.\n\n### Request Body\n\n- email (text): The user's email address.\n- password (text): The user's password.\n    \n\n### Response\n\n- status (string): The status of the login attempt.\n- status_code (number): The status code of the response.\n- message (string): A message indicating the result of the login attempt.\n- data (object): An object containing the user's token and name upon successful login.\n    - token (string): The user's authentication token.\n    - name (string): The user's name.\n\nExample Response:\n\n``` json\n{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"User login successfully!!\",\n    \"data\": {\n        \"token\": \"2|xhAFiA0EAjV7az9pRStLKxq9kTcW9uTA9xDoa1WQ\",\n        \"name\": \"Aryan\"\n    }\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "tapesh@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login?api_token=9801c30ca14c57ff49dfa936fd1c3f2f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "api_token",
+									"value": "9801c30ca14c57ff49dfa936fd1c3f2f"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 07:21:01 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 07:21:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.30"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"status_code\": 200,\n    \"message\": \"User login successfully!!\",\n    \"data\": {\n        \"token\": \"2|xhAFiA0EAjV7az9pRStLKxq9kTcW9uTA9xDoa1WQ\",\n        \"name\": \"Aryan\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "logout",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 07:23:00 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Feb 2024 07:23:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.30"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully logged out\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "3|pA2AWlJU208cZ6JOsq6hSsFrkPLZ79nz9kMeBpRx",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
