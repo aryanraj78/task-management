@@ -28,7 +28,7 @@ Short description or purpose of your Laravel project.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/aryanraj78/book-management.git
+    git clone https://github.com/aryanraj78/task-management.git
     ```
 
 2. Navigate to the project directory:
