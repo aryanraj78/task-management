@@ -71,17 +71,13 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         
+        $data = [];
             auth('sanctum')->user()->tokens()->delete();
             $user = Auth::user();
 
             // Revoke the user's token
             $user->tokens()->delete();
-
-            return response()->json([
-            'message' => 'Successfully logged out'
-            ]);
-
-           
+            return $this->success($data,'Successfully logged out', 200);         
     
         
 
